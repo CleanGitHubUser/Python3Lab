@@ -9,15 +9,6 @@ class SungJukVO:
         self.avg = 0.0
         self.grd = 'F'
 
-    def setTot(self, tot):
-        self.tot = tot
-
-    def setAvg(self, avg):
-        self.avg = avg
-
-    def setGrd(self, grd):
-        self.grd = grd
-
     def toString(self):
         fmt = '%5s %2d %2d %2d %3d %2.2f %s'
         return format( fmt %( self.name, self.kor, self.eng,

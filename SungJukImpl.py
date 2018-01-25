@@ -29,11 +29,14 @@ class SungJukService:
             grd = 'D'
         return grd
 
+    def processSungJuk(self, sj):
+        sj.tot = self.getTotal(sj)
+        sj.avg = self.getAverage(sj)
+        sj.grd = self.getGrade(sj)
+
     def insertSungJuk(self, sj):
 
-        sj.setTot( self.getTotal( sj ) )
-        sj.setAvg( self.getAverage( sj ) )
-        sj.setGrd( self.getGrade( sj ) )
+        self.processSungJuk( sj )
 
         self.sj_list.append( sj )
 
@@ -73,9 +76,7 @@ class SungJukService:
                 elif uwhat == 'mat':
                     sj.mat = int( towhat )
 
-                sj.tot = self.getTotal(sj)
-                sj.avg = self.getAverage(sj)
-                sj.grd = self.getGrade(sj)
+                self.processSungJuk( sj )
 
                 self.sj_list.append( sj )
 

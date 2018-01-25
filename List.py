@@ -119,3 +119,81 @@ print( list )
 # 모두제거 : clear()
 list.clear()
 print( list )
+
+# 연습문제 풀이
+
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print(x)
+x.append(10)        # 요소 하나를 리스트에 추가
+print(x)
+
+x.extend([11, 12])  # 하나 이상 요소를 리스트에 추가
+print(x)
+
+x.remove(11)        # 값으로 제거
+x.remove(12)
+print(x)
+
+x.reverse()         # 요소를 역순으로 배치
+print(x)
+
+print(x.pop())
+print(x)
+
+x = [10, 5, 4, 1]   # 정렬안된 리스트
+print(x)
+x.sort()            # 리스트 정렬
+print(x)
+
+# 1, 4, 5, 10
+x.insert(3, 7)  # 10 앞에 7을 삽입
+print(x)
+
+print(x.count(4))    # 지정한 요소 수
+
+print(x.index(5))   # 요소의 위치값 출력
+
+z = {1, 1, 1, 2, 2, 2, 3, 3, 3}
+print(z)            # 요소는 모두 3개
+
+z.add(1)            # 의미 없는 코드
+print(z)            # 어쨌든 3개
+
+def myRange(start, end, hop = 1):
+    retVal = start
+
+    while retVal <= end:
+        yield retVal
+        retVal += hop
+
+hap = 0
+for i in myRange(1, 5, 2):        # 종료값이 포함된 range 함수 작성
+                                # 결국, 릿트 형태의 값이 출력
+# for i in range(1, 5, 2):        # i : 1, 3
+# for i in [1, 3, 5]:     #i : 1, 3, 5
+    hap += i
+print(hap)
+
+def myRange2(start, end, hop = 1):
+    retVal = start
+
+    while retVal <= end:
+        # return retVal       # 중간 계산 결과를 출력 또는 처리
+        yield retVal        # 실행중에 계산된 값은
+                            # generator 타입에 저장해 둠
+        retVal += hop
+
+myRange2(1, 5, 2)
+a = myRange2(1, 5, 2)       # yield로 넘긴 데이터는 순환형식의
+                            # generator 타입 생성
+print(a)
+print( next(a))     # generator 타입에 저장된 값은
+                    # iterator형식으로 다룰 수 있음
+                    # iterator는 리스트에 저장된 객체를
+                    # 순환하며 하나씩 꺼내 사용하는 자료구조
+print( next(a))
+print( next(a))
+
+for i in a:         # generator 타입에 저장된 값은
+    print(i)        # for문으로도 출력 가능
