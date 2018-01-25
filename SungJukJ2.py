@@ -23,7 +23,7 @@ def getGrade():
         grd = 'C'
     elif avg >= 60:
         grd = 'D'
-    pass
+    return grd
 
 print( '-- 성적 처리 프로그램 V2 --')
 

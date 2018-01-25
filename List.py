@@ -103,4 +103,19 @@ list.append(8)
 print( list )
 
 # 요소 추가 : insert(위치, 값)
-list.index()
+list.insert(6, 7)
+print( list )
+
+# 요소 제거 : remove(값)
+list.remove(9)
+print( list )
+
+# 요소 제거 : pop(), pop(위치)
+list.pop(5)
+print( list )
+list.pop()      # 마지막 요소 제거
+print( list )
+
+# 모두제거 : clear()
+list.clear()
+print( list )
